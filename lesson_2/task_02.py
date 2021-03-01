@@ -16,7 +16,13 @@
 # Главное: дополнить числа до двух разрядов нулём!
 
 text = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
+text_new = []
 for i in text:
     if i.isdigit() == True:
-        text.insert(i - 1, '"')
-print(text)
+        text_new.append(f'"{int(i):02d}"')
+    elif i[1:].isdigit():
+        text_new.append(f'"{int(i):+03d}"')
+    else:
+        text_new.append(i)
+
+print(' '.join(text_new))
