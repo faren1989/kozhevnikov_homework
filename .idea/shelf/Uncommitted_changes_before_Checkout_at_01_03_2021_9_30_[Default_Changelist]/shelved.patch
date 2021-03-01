@@ -1,0 +1,19 @@
+Index: lesson_1/task_2.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># ЗАДАНИЕ 2\r\n\r\n# Сумма цифр числа\r\n# Спросить у пользователя число и вывести в ответ сумму цифр этого числа.\r\n# Программа должна спрашивать числа у пользователя до тех пор, пока он не введет \"0\".\r\n\r\nnumber = input('Введите число, сумму цифр которого хотите получить. \\nДля выхода нажмите \"0\".\\n')\r\nwhile number.isdigit() != True:\r\n    number = input('Введите целое положительное число, сумму цифр которого хотите получить. \\nДля выхода нажмите \"0\".\\n')\r\nwhile int(number[0]) != 0:\r\n    idx = 0\r\n    result = 0\r\n    while idx < len(number):\r\n        result = result + int(number[idx])\r\n        idx += 1\r\n    print(result)\r\n    number = input('Введите число, сумму цифр которого хотите получить. \\nДля выхода нажмите \"0\".\\n')\r\n    while number.isdigit() != True:\r\n        number = input('Введите целое положительное число, сумму цифр которого хотите получить. \\nДля выхода нажмите \"0\".\\n')\r\nexit(0)\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lesson_1/task_2.py b/lesson_1/task_2.py
+--- a/lesson_1/task_2.py	(revision 02588f48bd8ffb1a33e639e96ec6954ab671799b)
++++ b/lesson_1/task_2.py	(date 1614527913778)
+@@ -7,7 +7,7 @@
+ number = input('Введите число, сумму цифр которого хотите получить. \nДля выхода нажмите "0".\n')
+ while number.isdigit() != True:
+     number = input('Введите целое положительное число, сумму цифр которого хотите получить. \nДля выхода нажмите "0".\n')
+-while int(number[0]) != 0:
++while int(number) != 0:
+     idx = 0
+     result = 0
+     while idx < len(number):
