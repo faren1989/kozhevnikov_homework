@@ -7,7 +7,7 @@
 number = input('Введите число, сумму цифр которого хотите получить. \nДля выхода нажмите "0".\n')
 while number.isdigit() != True:
     number = input('Введите целое положительное число, сумму цифр которого хотите получить. \nДля выхода нажмите "0".\n')
-while int(number[0]) != 0:
+while int(number) != 0:
     idx = 0
     result = 0
     while idx < len(number):
