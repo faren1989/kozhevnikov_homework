@@ -17,6 +17,6 @@
 
 text = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
 for i in text:
-    if i.isdigit():
-        i = 0
+    if i.isdigit() == True:
+        text.insert(i - 1, '"')
 print(text)

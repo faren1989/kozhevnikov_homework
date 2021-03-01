@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de3680b0-6cd3-49dd-99b0-70878d1bcf05" name="Default Changelist" comment="Решил все задачи. Для второй задачи нашел-таки изящное решение, чтобы узнавать, что пользователь ввел именно числа, а не абракадабру, очень этому рад:)">
-      <change afterPath="$PROJECT_DIR$/lesson_2/task_01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lesson_2/task_02.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson_2/task_02.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson_2/task_02.py" afterDir="false" />
     </list>
     <list id="36b1d290-79d9-46a4-a0b8-ec529b73f76b" name="Uncommitted changes before Checkout at 01.03.2021 9:30 [Default Changelist]" comment="" />
     <option name="SHOW_DIALOG" value="false" />
