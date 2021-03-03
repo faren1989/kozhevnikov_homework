@@ -15,6 +15,7 @@ def thesaurus(*names):
         if name[0] not in keys:
             keys.append(name[0])
     keys.sort()
+
     values = []
     idx = 0
     while idx < len(keys):
@@ -30,3 +31,6 @@ def thesaurus(*names):
 names = ["Иван", "Мария", "Петр", "Илья", "Борислав", "Григорий", "Ирина", "Михаил"]
 
 thesaurus(*names)
+
+# Оператор распаковки был полезен при передаче аргументов в функцию.
+# Вернуть отсортированный по ключам словарь тоже получилось.
