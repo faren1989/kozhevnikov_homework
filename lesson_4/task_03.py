@@ -30,9 +30,10 @@ def get_currency_rate(*currency_names):
             nominal = info[currency_name_idx + nominal_start_idx + len('<Nominal>'):\
                            (currency_name_idx + nominal_end_idx)]
             # находим дату и переводим ее в нужный формат
-            date = info[info.find('Date') + len('Date="'):info.find('Date') + len('Date="00/00/0000')].split('.')
-            dd, mm, yyyy = int(date[0]), int(date[1]), int(date[2])
-            date = datetime.date(yyyy, mm, dd)
+            headers = requests.get('http://www.cbr.ru/scripts/XML_daily.asp').headers
+            form = '%a, %d %b %Y %H:%M:%S %Z'
+            date = datetime.datetime.strptime(headers['Date'], form)
+            date = datetime.datetime.date(date)
             # записываем в словарь валюту и ее значения
             currency_dict[currency_name] = [nominal, value, date]
         else:
