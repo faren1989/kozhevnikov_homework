@@ -8,29 +8,42 @@
 # }
 # Подумайте: полезен ли будет вам оператор распаковки? Сможете ли вы вернуть отсортированный по ключам словарь?
 
-
-def thesaurus(*names):
-    keys = []
-    for name in names:
-        if name[0] not in keys:
-            keys.append(name[0])
-    keys.sort()
-
-    values = []
-    idx = 0
-    while idx < len(keys):
-        value = []
-        for name in names:
-            if name[0] in keys[idx]:
-                value.append(name)
-        values.append(value)
-        idx += 1
-    print(dict(zip(keys, values)))
+# функция, которую оставил активной, более рациональная, чем написанная прежде.
+def thesaurus(*args):
+    dictionary = {}
+    for name in args:
+        first_letter = name[0]
+        dictionary.setdefault(first_letter, [])
+        dictionary[first_letter].append(name)
+    return dictionary
 
 
+# def thesaurus(*names):
+#     keys = []
+#     for name in names:
+#         if name[0] not in keys:
+#             keys.append(name[0])
+#     keys.sort()
+#
+#     values = []
+#     idx = 0
+#     while idx < len(keys):
+#         value = []
+#         for name in names:
+#             if name[0] in keys[idx]:
+#                 value.append(name)
+#         values.append(value)
+#         idx += 1
+#     print(dict(zip(keys, values)))
+#
+#
 names = ["Иван", "Мария", "Петр", "Илья", "Борислав", "Григорий", "Ирина", "Михаил"]
 
-thesaurus(*names)
+d = thesaurus(*names)
+for first_letter in sorted(d.keys()):
+    print(f'{first_letter}: {d[first_letter]}')
+
+
 
 # Оператор распаковки был полезен при передаче аргументов в функцию.
 # Вернуть отсортированный по ключам словарь тоже получилось.
