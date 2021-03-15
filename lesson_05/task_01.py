@@ -22,27 +22,21 @@ def rand_nums(limit):
         i += 1
 
 
-# rand15 = rand_nums(15)
-# print(next(rand15))
-# print(next(rand15))
-# print(next(rand15))
-# print(next(rand15))
-# print(next(rand15))
-# print(next(rand15))
-# print(next(rand15))
-# print(next(rand15))
-# print(next(rand15))
-# print(next(rand15))
-# print(next(rand15))
-# print(next(rand15))
-# print(next(rand15))
-# print(next(rand15))
-# print(next(rand15))
-# print(next(rand15))
-# print('=======')
-#
-# # вариант покороче, но здесь тогда не выполняется условие задачи в плане создания функции
-# limit = 15
-# num2 = (random.choice(range(1, 101)) for i in range(limit))
-# print(next(num2))
-
+if __name__ == '__main__':
+    rand15 = rand_nums(15)
+    print(next(rand15))
+    print(next(rand15))
+    print(next(rand15))
+    print(next(rand15))
+    print(next(rand15))
+    print(next(rand15))
+    print(next(rand15))
+    print(next(rand15))
+    print(next(rand15))
+    print(next(rand15))
+    print(next(rand15))
+    print(next(rand15))
+    print(next(rand15))
+    print(next(rand15))
+    print(next(rand15))
+    print(next(rand15))
