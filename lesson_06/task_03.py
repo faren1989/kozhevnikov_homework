@@ -63,10 +63,8 @@ with open('dict.txt', 'r', encoding='utf8') as dict_file:
 
 # Чтобы не терялся тип данных, воспользуемся json
 with open('dict.txt', 'w', encoding='utf8') as dict_file:
-    life_style_new = json.dumps(life_style, ensure_ascii=False)
-    dict_file.write(life_style_new)
+    dict_file.write(json.dumps(life_style, ensure_ascii=False))
 
 with open('dict.txt', 'r', encoding='utf8') as dict_file:
-    src = dict_file.read()
-    result = json.loads(src)
+    result = json.loads(dict_file.read())
     print(result, '\n', type(result))
