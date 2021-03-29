@@ -15,10 +15,12 @@
 
 import re
 
+
 def email_parse(email):
-    login_name, mail = re.search(r'(.+@)(.+)', email).groups()
-    validate_login = re.search(r'([а-яА-Я`~@!#$%^&*()_№=+{};:<>,./\?\'\"\[\]\\-])', login_name[:-1])
-    validate_mail = re.search(r'([а-яА-Я`~@!#$%^&*()_№=+{};:<>,/\?\'\"\[\]\\-])', mail)
+    login_name, mail = re.split(r'@', email)[0], re.split(r'@', email)[1]
+    pattern = re.compile(r'([а-яА-Я`~@!#$%^&*()_№=+{};:<>,/?\'\"\[\]\\-])')
+    validate_login = pattern.search(login_name)
+    validate_mail = pattern.search(mail)
     if validate_login:
         symbol = validate_login.groups()[0]
         raise ValueError(f'"{symbol}" - недопустимый символ в адресе почты')
@@ -28,7 +30,7 @@ def email_parse(email):
     elif '.' not in mail:
         raise ValueError('Забыли указать домен')
     else:
-        return {login_name[:-1]: mail}
+        return {login_name: mail}
 
 
 email = input('Введите адрес электронной почты: ')
