@@ -13,6 +13,7 @@ while True:
     try:
         list_el = input('Введите число для добавления в список(для выхода введите "q"): ')
         if list_el == 'q':
+            print(f'Список чисел: {result_list}\n')
             exit('Пока!')
         if not list_el.isdigit():
             raise ListError('Это не число!\n')
